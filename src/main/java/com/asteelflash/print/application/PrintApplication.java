@@ -33,8 +33,7 @@ public abstract class PrintApplication {
 		}
 	}
 
-	@SuppressWarnings("unused")
-	private ActiveXComponent getPrintApplication() {
+	protected ActiveXComponent getPrintApplication() {
 		ActiveXComponent component = ActivexUtils.getActiveComponentByProgramId(APPLICATION_ID);
 		if (null == component) {
 			System.out.println("Can not get Activex application:" + APPLICATION_ID);
@@ -51,6 +50,7 @@ public abstract class PrintApplication {
 		}
 		ComThread.Release();
 	}
+
 
 	/*
 	 * get property
