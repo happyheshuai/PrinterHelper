@@ -33,7 +33,7 @@ public abstract class PrintApplication {
 		}
 	}
 
-	protected ActiveXComponent getPrintApplication() {
+	public ActiveXComponent getPrintApplication() {
 		ActiveXComponent component = ActivexUtils.getActiveComponentByProgramId(APPLICATION_ID);
 		if (null == component) {
 			System.out.println("Can not get Activex application:" + APPLICATION_ID);
