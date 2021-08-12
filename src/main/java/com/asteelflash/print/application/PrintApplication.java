@@ -16,9 +16,6 @@ public abstract class PrintApplication {
 		return APPLICATION_ID;
 	}
 
-	public void setAPPLICATION_ID(String aPPLICATION_ID) {
-		APPLICATION_ID = aPPLICATION_ID;
-	}
 
 	@SuppressWarnings("unused")
 	private PrintApplication() {
@@ -34,11 +31,7 @@ public abstract class PrintApplication {
 	}
 
 	public ActiveXComponent getPrintApplication() {
-		ActiveXComponent component = ActivexUtils.getActiveComponentByProgramId(APPLICATION_ID);
-		if (null == component) {
-			System.out.println("Can not get Activex application:" + APPLICATION_ID);
-		}
-		return component;
+		return this.ACTIVEX_COMPONENT.get();
 	}
 
 	/*
