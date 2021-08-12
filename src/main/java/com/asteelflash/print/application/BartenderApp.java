@@ -50,13 +50,13 @@ public class BartenderApp extends PrintApplication implements IBartenderApp {
 			if (null != processID) {
 				try {
 					WindowsTaskManager.killTask(Integer.parseInt(processID));
+					Dispatch.call(ACTIVEX_COMPONENT.get(), "Quit", 1);
 				} catch (NumberFormatException e) {
 					e.printStackTrace();
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
 			}
-			// Dispatch.call(ACTIVEX_COMPONENT.get(), "Quit", 1);
 		}
 		super.release();
 	}
