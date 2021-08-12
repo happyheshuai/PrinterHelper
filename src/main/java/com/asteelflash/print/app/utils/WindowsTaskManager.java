@@ -24,7 +24,7 @@ public class WindowsTaskManager {
 		Hashtable<Integer, WindowsTask> tasks = getTaskList();
 		WindowsTask task = tasks.get(pid);
 		if (task != null) {
-			Runtime.getRuntime().exec(TSKILL_CMD + " " + "/PID " + pid + " /F");
+			Runtime.getRuntime().exec(TSKILL_CMD + " " + "/F /PID "  + pid);
 		}
 	}
 
